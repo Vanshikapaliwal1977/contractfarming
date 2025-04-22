@@ -2,15 +2,16 @@
 import { Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import Navigation from './Navigation';
 
 const Navbar = () => {
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <header className="bg-farming-primary sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-farming-primary to-farming-secondary bg-clip-text text-transparent">Contract Farming</span>
+              <span className="text-2xl font-bold text-white">Contract Farming</span>
             </a>
           </div>
           
@@ -22,21 +23,22 @@ const Navbar = () => {
               <Input 
                 type="text"
                 placeholder="Search contracts, crops, locations..."
-                className="pl-10 border-0 bg-gray-50 focus:ring-2 focus:ring-farming-light focus:bg-white w-full rounded-full"
+                className="pl-10 border-0 bg-white/90 focus:ring-2 focus:ring-farming-light focus:bg-white w-full rounded-full"
               />
             </div>
           </div>
           
           <div className="flex items-center space-x-3">
-            <Button variant="outline" className="hidden md:inline-flex border-farming-primary text-farming-primary hover:bg-farming-light hover:text-farming-primary">
+            <Button variant="outline" className="bg-farming-primary/20 text-white border-white/30 hover:bg-farming-primary/40">
               Farmer Login
             </Button>
-            <Button className="bg-farming-primary hover:bg-farming-secondary text-white transition-colors">
+            <Button className="bg-farming-accent hover:bg-farming-accent/90 text-farming-primary font-medium">
               Buyer Login
             </Button>
           </div>
         </div>
       </div>
+      <Navigation />
     </header>
   );
 }

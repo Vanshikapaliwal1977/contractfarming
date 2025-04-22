@@ -6,7 +6,7 @@ const Navigation = () => {
   const [activeLink, setActiveLink] = useState("home");
   
   const links = [
-    { name: "Home", id: "home", href: "#" },
+    { name: "Home", id: "home", href: "/" },
     { name: "Become a Contract Farmer", id: "farmer", href: "#" },
     { name: "Become a Buyer", id: "buyer", href: "#" },
     { name: "Contact Us", id: "contact", href: "#" },
@@ -14,8 +14,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-farming-background border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-farming-primary border-b border-farming-light/20">
+      <div className="max-w-7xl mx-auto">
         <div className="flex space-x-8">
           {links.map((link) => (
             <a
@@ -23,10 +23,8 @@ const Navigation = () => {
               href={link.href}
               onClick={() => setActiveLink(link.id)}
               className={cn(
-                "py-4 px-1 text-sm font-medium border-b-2 transition-all duration-200 ease-in-out",
-                activeLink === link.id
-                  ? "border-farming-primary text-farming-primary"
-                  : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                "py-4 px-4 text-sm font-medium text-white hover:bg-farming-secondary/80 transition-colors",
+                activeLink === link.id && "bg-farming-secondary"
               )}
             >
               {link.name}
