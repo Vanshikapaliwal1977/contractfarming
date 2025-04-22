@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				farming: {
+					primary: '#3B7A57',
+					secondary: '#6EA959',
+					light: '#D3E4C5',
+					background: '#F7F9F3',
+					accent: '#F0C05A',
+					muted: '#8E9196'
 				}
 			},
 			borderRadius: {

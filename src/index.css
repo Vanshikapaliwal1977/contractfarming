@@ -50,6 +50,16 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  
+  @font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  }
+  
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
 
   .dark {
     --background: 222.2 84% 4.9%;
