@@ -1,5 +1,6 @@
-
 import { Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,18 @@ const Navbar = () => {
         <span className="text-base italic text-white/80 mb-2 tracking-tight">
           Empowering Farmers, Connecting Communities
         </span>
+        <div className="flex space-x-4 mt-2">
+          <Link to="/farmer-login">
+            <Button variant="outline" className="bg-white/20 text-white border-white/30 hover:bg-white/40">
+              Farmer Login
+            </Button>
+          </Link>
+          <Link to="/buyer-login">
+            <Button className="bg-farming-accent hover:bg-farming-accent/90 text-farming-primary font-medium">
+              Buyer Login
+            </Button>
+          </Link>
+        </div>
       </div>
       <div className="w-full h-2 bg-gradient-to-r from-green-300/40 via-white/10 to-green-200/10 shadow" />
     </nav>
