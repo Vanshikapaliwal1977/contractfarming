@@ -1,46 +1,23 @@
 
-import { Search } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import Navigation from './Navigation';
+import { Leaf } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <header className="bg-farming-primary sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex">
-            <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">Contract Farming</span>
-            </a>
-          </div>
-          
-          <div className="hidden md:flex items-center flex-1 max-w-md mx-10">
-            <div className="w-full relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
-              </div>
-              <Input 
-                type="text"
-                placeholder="Search contracts, crops, locations..."
-                className="pl-10 border-0 bg-white/90 focus:ring-2 focus:ring-farming-light focus:bg-white w-full rounded-full"
-              />
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-3">
-            <Button variant="outline" className="bg-farming-primary/20 text-white border-white/30 hover:bg-farming-primary/40">
-              Farmer Login
-            </Button>
-            <Button className="bg-farming-accent hover:bg-farming-accent/90 text-farming-primary font-medium">
-              Buyer Login
-            </Button>
-          </div>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-tr from-green-700 via-green-500 to-green-400 shadow-lg">
+      <div className="max-w-4xl mx-auto px-6 pt-6 pb-3 flex flex-col items-center justify-center rounded-b-2xl backdrop-blur-md">
+        <div className="flex items-center gap-2 mb-2">
+          <Leaf className="text-white" size={36} />
+          <span className="text-3xl md:text-4xl font-bold text-white drop-shadow">
+            Farmer Connect
+          </span>
         </div>
+        <span className="text-base italic text-white/80 mb-2 tracking-tight">
+          Empowering Farmers, Connecting Communities
+        </span>
       </div>
-      <Navigation />
-    </header>
+      <div className="w-full h-2 bg-gradient-to-r from-green-300/40 via-white/10 to-green-200/10 shadow" />
+    </nav>
   );
-}
+};
 
 export default Navbar;
