@@ -1,35 +1,61 @@
-import { Leaf } from "lucide-react";
+
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { Search } from "lucide-react";
+import { Input } from "./ui/input";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-tr from-green-700 via-green-500 to-green-400 shadow-lg">
-      <div className="max-w-4xl mx-auto px-6 pt-6 pb-3 flex flex-col items-center justify-center rounded-b-2xl backdrop-blur-md">
-        <div className="flex items-center gap-2 mb-2">
-          <Leaf className="text-white" size={36} />
-          <span className="text-3xl md:text-4xl font-bold text-white drop-shadow">
-            Farmer Connect
-          </span>
-        </div>
-        <span className="text-base italic text-white/80 mb-2 tracking-tight">
-          Empowering Farmers, Connecting Communities
-        </span>
-        <div className="flex space-x-4 mt-2">
-          <Link to="/farmer-login">
-            <Button variant="outline" className="bg-white/20 text-white border-white/30 hover:bg-white/40">
-              Farmer Login
-            </Button>
+    <div className="bg-green-700">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Top bar with logo and auth buttons */}
+        <div className="flex items-center justify-between py-4">
+          <Link to="/" className="text-2xl font-bold text-white">
+            Contract Farming
           </Link>
-          <Link to="/buyer-login">
-            <Button className="bg-farming-accent hover:bg-farming-accent/90 text-farming-primary font-medium">
-              Buyer Login
-            </Button>
-          </Link>
+          
+          <div className="flex items-center gap-4">
+            <div className="relative w-96">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Input 
+                type="text"
+                placeholder="Search contracts, crops, locations..."
+                className="pl-10 bg-white/90 border-0"
+              />
+            </div>
+            <Link to="/farmer-login">
+              <Button variant="outline" className="bg-green-600 text-white border-white/20 hover:bg-green-700">
+                Farmer Login
+              </Button>
+            </Link>
+            <Link to="/buyer-login">
+              <Button className="bg-farming-accent hover:bg-farming-accent/90">
+                Buyer Login
+              </Button>
+            </Link>
+          </div>
         </div>
+        
+        {/* Navigation Links */}
+        <nav className="flex space-x-8 py-2">
+          <Link to="/" className="text-white hover:text-white/80 py-2 px-3 bg-green-600 rounded">
+            Home
+          </Link>
+          <Link to="/become-farmer" className="text-white hover:text-white/80 py-2">
+            Become a Contract Farmer
+          </Link>
+          <Link to="/become-buyer" className="text-white hover:text-white/80 py-2">
+            Become a Buyer
+          </Link>
+          <Link to="/contact" className="text-white hover:text-white/80 py-2">
+            Contact Us
+          </Link>
+          <Link to="/about" className="text-white hover:text-white/80 py-2">
+            About Us
+          </Link>
+        </nav>
       </div>
-      <div className="w-full h-2 bg-gradient-to-r from-green-300/40 via-white/10 to-green-200/10 shadow" />
-    </nav>
+    </div>
   );
 };
 
